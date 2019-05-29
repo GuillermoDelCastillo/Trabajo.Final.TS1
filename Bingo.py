@@ -2,7 +2,7 @@ def pedirNum():
  
     incorrecto = False
     num=0
-    while(not correcto):
+    while(not incorrecto):
         try:
             num = int(input("Indica la opción: "))
             incorrecto = True
