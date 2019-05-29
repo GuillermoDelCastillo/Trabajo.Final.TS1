@@ -34,7 +34,7 @@ while not salir:
     elif opcion ==4:
         salir = True
     else:
-        print("Introduce una opcion entre 1 y 3.")
+        print("Introduce una opcion entre 1 y 4.")
  
 print("Fin")
     
