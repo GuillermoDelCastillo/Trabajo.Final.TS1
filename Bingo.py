@@ -1,11 +1,11 @@
 def pedirNum():
  
-    correcto = False
+    incorrecto = False
     num=0
     while(not correcto):
         try:
             num = int(input("Indica la opción: "))
-            correcto = True
+            incorrecto = True
         except ValueError:
             print("Error, introduce opción.")
  
