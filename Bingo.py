@@ -1,4 +1,4 @@
-def pedirNumeroEntero():
+def pedirNum():
  
     correcto = False
     num=0
@@ -15,15 +15,15 @@ salir = False
 opcion = 0
  
 while not salir:
+    print("-----------BINGO---------")
+    print("1.---------Jugar---------")
+    print("2.-------Resultado-------")
+    print("3.----Reiniciar juego----")
+    print("4.----Finalizar juego----")
  
-    print("1._____Jugar_____")
-    print("2. Resultado")
-    print("3. Reiniciar juego")
-    print("4. Finalizar juego")
+    print("----Elije una opción----")
  
-    print("Elije una opción")
- 
-    opcion = pedirNumeroEntero()
+    opcion = pedirNum()
  
     if opcion == 1:
         print("Jugar")
@@ -34,7 +34,7 @@ while not salir:
     elif opcion ==4:
         salir = True
     else:
-        print("Introduce una opcion entre 1 y 4")
+        print("Introduce una opcion entre 1 y 3.")
  
 print("Fin")
     
