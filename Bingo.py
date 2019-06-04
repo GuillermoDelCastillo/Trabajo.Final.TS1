@@ -1,3 +1,7 @@
+import random
+
+bolillas  =  [ ]
+
 def pedirNum():
  
     incorrecto = False
@@ -21,12 +25,25 @@ while not salir:
     print("3.----Reiniciar juego----")
     print("4.----Finalizar juego----")
  
-    print("----Elije una opción----")
+    print("  ---Elije una opción---")
  
     opcion = pedirNum()
  
     if opcion == 1:
         print("Jugar")
+        
+        seguir = False
+        jugando = 0
+        while (not seguir):
+           
+            for i in range (1):
+                bolillas.append(random.randint(1, 80))
+            num = int(input("Marque 1 para seguir sacando una nueva bolilla: "))
+            seguir = False
+
+            print ("La bolilla es: ",bolillas)
+
+       
     elif opcion ==2:
         print("Resultado")
     elif opcion ==3:
