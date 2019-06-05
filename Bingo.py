@@ -26,11 +26,15 @@ while not salir:
     print("4.----Finalizar juego----")
  
     print("  ---Elije una opción---")
+
+    B = list(range(1,81))
  
     opcion = pedirNum()
  
     if opcion == 1:
         print("Jugar")
+        
+        n = int(input("Ingresar el número de jugadores"))
         
         seguir = False
         jugando = 0
