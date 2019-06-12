@@ -25,7 +25,7 @@ while not salir:
     print("3.----Reiniciar juego----")
     print("4.----Finalizar juego----")
  
-    print("  ---Elije una opción---")
+
 
     B = list(range(1,81))
  
@@ -49,14 +49,15 @@ while not salir:
            
             for i in range (1):
                 bolillas.append(random.randint(1, 80))
+                bolillas.reverse()
             num = int(input("Marque 1 para obtener bolilla: "))
             seguir = False
 
-            print ("La bolilla es: ",bolillas)
+            print ("La bolilla es: ",random.randint(1, 80))
 
        
     elif opcion ==2:
-        print("Resultado")
+        print("Resumen de bolillas: ", bolillas)
         
     elif opcion ==3:
         print("Reiniciar juego")
