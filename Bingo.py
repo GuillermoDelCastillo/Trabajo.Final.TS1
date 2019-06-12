@@ -42,7 +42,7 @@ while not salir:
             i+= 1
             
         seguir = False
-        jugando = 0
+
         while (not seguir):
            
             for i in range (1):
