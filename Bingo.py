@@ -25,9 +25,8 @@ while not salir:
     print("3.----Reiniciar juego----")
     print("4.----Finalizar juego----")
  
-
-
-    B = list(range(1,81))
+ 
+    print("  ---Elije una opción---")
  
     opcion = pedirNum()
  
@@ -44,7 +43,7 @@ while not salir:
             i+= 1
             
         seguir = False
-        jugando = 0
+
         while (not seguir):
            
             for i in range (1):
