@@ -72,11 +72,13 @@ while (ejecucion):
                                 print("Debe presionar 1 o 2")
                          
                 elif opcion == 2:
+                        
                         print(bolillas)
                         pregunta = False
                         dato = False
                 elif opcion == 3:
                         bolillas.clear()
+                        jugadores.clear()
                         pregunta = False
                         dato = False
                         print("Reiniciando...")
