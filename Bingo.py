@@ -1,69 +1,96 @@
 import random
 
-bolillas  =  [ ]
-jugadores = [ ]
-def pedirNum():
- 
-    incorrecto = False
-    num=0
-    while(not incorrecto):
+deposito = list(range(1,80))
+random.shuffle(deposito)
+
+jugadores = []
+bolillas = []
+pregunta = True
+continuar = 0
+ejecucion = True
+dato = True
+
+nJ = int(input("Ingrese el numero de participantes: "))
+nC = int(input("Ingrese el numero de cartillas vendidas: "))
+
+pozo = nC * 5
+
+i = 0
+n = 0
+
+while i < nJ:
+
+    nombre = (input("Ingrese el nombre del jugador: "))
+    jugadores.append(nombre)
+
+    i+= 1
+
+while (ejecucion):
+    print("Digite 1 para empezar a jugar.")
+    print("Digite 2 para ver el registro de bolillas.")
+    print("Digite 3 para reiniciar el juego.")        
+    print("Digite 4 para finalizar.")
+    dato = True
+    pregunta = True
+    while dato:
+        opcion = input("Ingrese la opcion: ")
         try:
-            num = int(input("Indica la opción: "))
-            incorrecto = True
+            opcion = int(opcion)
+            if opcion >=1 and opcion<=4:
+
+                if opcion == 1:
+                    while (pregunta):
+                        for i in range (1):
+                            e = deposito[0]
+                            deposito.remove(e)
+                            bolillas.append(e)
+                            bolillas.reverse()
+                            print ("La bolilla es: ",bolillas[i])
+                            continuar = input("Desea continuar: Si(1) o No(2): ")
+                            if deposito:
+                                print("Aun quedan bolillas.")
+                            else:
+                                print("Se acabaron las bolillas :( nadie ganó.")
+                                print("Reiniciando deposito de bolillas.")
+                                deposito = list(range(1,80))
+                                random.shuffle(deposito)
+                                break
+                            try:
+                                continuar = int(continuar)
+                                if 1 <= continuar <= 2:
+                                    if continuar == 2:
+                                        pregunta = False
+                                        dato = False
+                                    elif continuar == 1:
+                                        pregunta = True
+                                else:
+                                    print("Debe presionar 1 o 2")
+                                    pregunta = False
+                                    dato = False
+                                
+                            except ValueError:
+                                print("Debe presionar 1 o 2")
+                         
+                elif opcion == 2:
+                        print(bolillas)
+                        pregunta = False
+                        dato = False
+                elif opcion == 3:
+                        bolillas.clear()
+                        pregunta = False
+                        dato = False
+                        print("Reiniciando...")
+                        print("Las bolillas fueron devueltas al depósito")
+                elif opcion == 4:
+                    print("El monto ganado es: s/.", pozo)
+                    ejecucion = False
+                    pregunta = False
+                    dato = False
+                    break
+
+            else:
+                print("opción incorrecta")
         except ValueError:
-            print("Error, introduce opción.")
- 
-    return num
- 
-salir = False
-opcion = 0
+            print ("Opcion equivocada ingrese una opcion valida")
 
-while not salir:
-    print("-----------BINGO---------")
-    print("1.---------Jugar---------")
-    print("2.-------Resultado-------")
-    print("3.----Reiniciar juego----")
-    print("4.----Finalizar juego----")
- 
- 
-    print("  ---Elije una opción---")
- 
-    opcion = pedirNum()
- 
-    if opcion == 1:
-        print("Jugar")
-      
-        n = int(input("Ingresar el número de jugadores: "))
-
-        i=0
-        
-        while i < n:
-            nombre = (input("Ingrese el nombre del jugador: "))
-
-            i+= 1
-            
-        seguir = False
-
-        while (not seguir):
-           
-            for i in range (1):
-                bolillas.append(random.randint(1, 80))
-                bolillas.reverse()
-            num = int(input("Marque 1 para obtener bolilla: "))
-            seguir = False
-
-            print ("La bolilla es: ",random.randint(1, 80))
-
-       
-    elif opcion ==2:
-        print("Resumen de bolillas: ", bolillas)
-        
-    elif opcion ==3:
-        print("Reiniciar juego")
-    elif opcion ==4:
-        salir = True
-    else:
-        print("Introduce una opcion entre 1 y 3.")
- 
-print("Fin")
-    
+print("FIN")
