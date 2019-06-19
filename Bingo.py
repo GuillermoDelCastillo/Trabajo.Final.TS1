@@ -50,8 +50,8 @@ while (ejecucion):
                             if deposito:
                                 print("Aun quedan bolillas.")
                             else:
-                                print("Se acabaron las bolillas :( nadie ganó.")
-                                print("Reiniciando deposito de bolillas.")
+                                print("Se acabaron las bolillas :( nadie ganó...")
+                                print("Reiniciando deposito de bolillas...")
                                 deposito = list(range(1,80))
                                 random.shuffle(deposito)
                                 break
